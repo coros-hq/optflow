@@ -1,0 +1,380 @@
+---
+import '../styles/global.css'
+
+const nav = [
+  ['Work', '#work'],
+  ['Services', '#services'],
+  ['Pricing', '#pricing'],
+  ['Journal', '#journal'],
+  ['FAQ', '#faq'],
+]
+
+const clients = ['Northwind', 'Lumina', 'Halcyon', 'Parallel', 'Kestrel', 'Monolith', 'Vantage']
+
+const projects = [
+  { name: 'Rivermark', desc: 'Bold street branding campaign built to capture attention and energize urban audiences.', tags: ['Website', 'Social Media'], a: '#ffa274', b: '#E8480C', c: '#4d1602' },
+  { name: 'Fluxa', desc: 'Dynamic digital visuals and identity for modern, expressive brands.', tags: ['UX/UI', 'Growth'], a: '#9dc0ff', b: '#2F6FD6', c: '#0e2350' },
+  { name: 'Season', desc: 'Ecommerce experience designed for clarity, speed and engaging product storytelling.', tags: ['Website', 'UX/UI'], a: '#ffd2b5', b: '#E8480C', c: '#2F6FD6' },
+  { name: 'Nova', desc: 'Clean product interface that simplifies complex digital interactions.', tags: ['UX/UI', 'Website', 'Growth'], a: '#ffb08a', b: '#2F6FD6', c: '#13275a' },
+]
+
+const services = [
+  { n: '01', title: 'Brand Identity & Strategy', desc: 'Strategic positioning and visual systems that bring your brand to life.', tags: ['Positioning', 'Visual Identity', 'Design System'] },
+  { n: '02', title: 'Digital Marketing & Growth', desc: 'Modern campaigns built to thrive and convert across digital platforms.', tags: ['Conversion Optimization', 'Analytics', 'A/B Testing'] },
+  { n: '03', title: 'Social Media & Content', desc: 'Content and campaigns that grow audiences and strengthen brand presence.', tags: ['Content Strategy', 'Creative Production', 'Campaigns'] },
+  { n: '04', title: 'UI/UX & Product Design', desc: 'Intuitive interfaces and journeys that improve usability and engagement.', tags: ['User Research', 'Interface Design', 'Product Scaling'] },
+  { n: '05', title: 'Website Design & Development', desc: 'Fast, scalable websites designed for performance and clarity.', tags: ['UI Development', 'Performance', 'SEO Setup'] },
+]
+
+const steps = [
+  ['Discovery', 'We start with your business, audience and goals, uncovering the insights that shape a strong digital foundation.'],
+  ['Strategy', 'We define positioning, direction and structure so every design decision serves your long-term growth.'],
+  ['Design', 'We craft branding, interfaces and visual systems that turn complex ideas into clear, engaging experiences.'],
+]
+
+const plans = [
+  {
+    name: 'Launch',
+    blurb: 'For startups and new businesses establishing their brand and digital presence from scratch.',
+    items: ['Brand identity basics', 'Website design & development', 'UI/UX interface design', 'SEO foundation setup', 'Social media starter kit'],
+    price: '$6,000',
+    unit: '/ project',
+    featured: false,
+  },
+  {
+    name: 'Growth',
+    blurb: 'For growing brands ready to scale their digital experience with advanced strategy and design.',
+    items: ['Digital-first branding system', 'Strategic website experience', 'Advanced UI/UX optimization', 'Brand strategy development', 'Social media design system'],
+    price: '$12,000',
+    unit: '/ project',
+    featured: true,
+  },
+  {
+    name: 'Scale',
+    blurb: 'For ambitious companies that need an ongoing creative partner across brand, product and marketing.',
+    items: ['Brand strategy & identity', 'Custom website development', 'End-to-end product UI/UX', 'Digital marketing campaigns', 'Ongoing creative partnership'],
+    price: '$5,000',
+    unit: '/ month',
+    featured: false,
+  },
+]
+
+const quotes = [
+  ['“Optflow turned our brand and website into a real growth engine.”', 'Daniel Carter', 'Founder & CEO, NovaTech'],
+  ['“Their strategy and UI design lifted our entire product experience.”', 'Ethan Walker', 'Product Director, Lumina Labs'],
+  ['“They helped us clarify our brand and launch with confidence.”', 'Marcus Rivera', 'Head of Marketing, Horizon'],
+]
+
+const stats = [
+  [120, '+', 'Projects delivered'],
+  [40, '+', 'Industries impacted'],
+  [9, '+', 'Years of experience'],
+]
+
+const posts = [
+  ['June 17, 2026', 'Design', 'Why great UI/UX starts with strategy', 'How strategic thinking shapes intuitive product experiences and meaningful user journeys.', '#2F6FD6', '#E8480C'],
+  ['June 2, 2026', 'Branding', 'Designing brands for the digital-first era', 'How modern identity systems adapt to digital platforms and evolving user behavior.', '#E8480C', '#2F6FD6'],
+]
+
+const faqs = [
+  ['What services does Optflow provide?', 'Brand identity and strategy, UI/UX and product design, website design and development, social content and growth marketing.'],
+  ['How long does a typical project take?', 'Most brand and website projects take 4–8 weeks from kickoff to launch, depending on scope and how quickly feedback moves.'],
+  ['Do you work with startups or established companies?', 'Both. We scale the engagement to fit — from a focused launch package to an ongoing partnership.'],
+  ['What is your design and development process?', 'Discovery, strategy, then design and build, with weekly check-ins and shared prototypes throughout.'],
+  ['Can you redesign an existing brand or website?', 'Yes. We audit what is working, keep what earns its place and rebuild the rest.'],
+  ['Do you provide support after launch?', 'Yes. Every project includes a support window, and the Scale plan covers ongoing iteration.'],
+]
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Optflow — Creative Design Studio</title>
+    <meta name="description" content="Optflow is an independent creative design studio crafting brands, websites and digital experiences." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="nav">
+      <a href="#top" class="logo"><span class="logo-mark"></span>optflow</a>
+      <nav>{nav.map(([l, h]) => <a href={h}>{l}</a>)}</nav>
+      <a href="#contact" class="btn btn-dark">Book a call</a>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+        <h1 class="hero-title">We make<br /><span class="hl">Creative Things.</span></h1>
+        <div class="hero-foot">
+          <span class="mono">GMT+0 <b id="clock">00:00</b></span>
+          <p>Designing brands, products and campaigns built for a digital-first world.</p>
+          <button class="mono copy" id="copy" data-email="hello@optflow.studio"><span>hello@<b>optflow.studio</b></span></button>
+        </div>
+      </section>
+
+      <!-- CLIENTS -->
+      <section class="clients">
+        <p class="eyebrow">Trusted by world-leading teams</p>
+        <div class="marquee">
+          <div class="track">
+            {[0, 1].map(() => clients.map((c) => <span class="client">{c}</span>))}
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section class="section" id="work">
+        <div class="head reveal">
+          <div>
+            <p class="eyebrow">Featured work</p>
+            <h2>Selected projects with ambitious brands and bold teams</h2>
+          </div>
+          <a href="#contact" class="btn btn-light">Book an intro call</a>
+        </div>
+        <div class="work-grid">
+          {
+            projects.map((p, i) => (
+              <article class="card reveal" style={`--a:${p.a};--b:${p.b};--c:${p.c}`}>
+                <div class="art">
+                  <>
+                    <span class="art-shape s1" />
+                    <span class="art-shape s2" />
+                    <span class="art-num mono">0{i + 1}</span>
+                  </>
+                </div>
+                <div class="card-body">
+                  <h3>{p.name}</h3>
+                  <p>{p.desc}</p>
+                  <ul class="tags">
+                    {p.tags.map((t) => (
+                      <li>{t}</li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section class="section" id="services">
+        <div class="head reveal"><div><p class="eyebrow">Services</p><h2>Everything a brand needs, under one roof</h2></div></div>
+        <ul class="services">
+          {
+            services.map((s) => (
+              <li class="service reveal">
+                <span class="mono num">{s.n}</span>
+                <h3>{s.title}</h3>
+                <div class="svc-detail">
+                  <p>{s.desc}</p>
+                  <ul class="tags">
+                    {s.tags.map((t) => (
+                      <li>{t}</li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="section">
+        <div class="head reveal"><div><p class="eyebrow">How we work</p><h2>From complexity to <em>clarity</em> in 3 steps</h2></div></div>
+        <div class="steps">
+          {
+            steps.map(([t, d], i) => (
+              <div class="step reveal">
+                <>
+                  <span class="mono">0{i + 1}</span>
+                  <h3>{t}</h3>
+                  <p>{d}</p>
+                </>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- PRICING -->
+      <!-- <section class="section" id="pricing">
+        <div class="head reveal"><div><p class="eyebrow">Pricing</p><h2>Choose a plan that fits your needs</h2></div></div>
+        <div class="plans">
+          {plans.map((p) => (
+            <div class:list={['plan', 'reveal', { featured: p.featured }]}>
+              <h3>{p.name} plan</h3>
+              <p class="blurb">{p.blurb}</p>
+              <ul class="checks">{p.items.map((it) => <li>{it}</li>)}</ul>
+              <div class="price"><b>{p.price}</b><span>{p.unit}</span></div>
+              <a href="#contact" class:list={['btn', p.featured ? 'btn-light' : 'btn-dark']}>Inquire about {p.name}</a>
+            </div>
+          ))}
+        </div>
+      </section> -->
+
+      <!-- TESTIMONIALS + STATS -->
+      <section class="section">
+        <div class="head reveal"><div><p class="eyebrow">Client voices</p><h2>Where ambitious brands build their digital future</h2></div></div>
+        <div class="quotes">
+          {
+            quotes.map(([q, n, r]) => (
+              <figure class="quote reveal">
+                <>
+                  <blockquote>{q}</blockquote>
+                  <figcaption>
+                    <>
+                      <b>{n}</b>
+                      <span>{r}</span>
+                    </>
+                  </figcaption>
+                </>
+              </figure>
+            ))
+          }
+        </div>
+        <div class="stats">
+          {
+            stats.map(([n, s, l]) => (
+              <div class="stat reveal">
+                <>
+                  <b>
+                    <span data-count={n}>0</span>
+                    {s}
+                  </b>
+                  <span>{l}</span>
+                </>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- JOURNAL -->
+      <section class="section" id="journal">
+        <div class="head reveal">
+          <div><p class="eyebrow">Insights</p><h2>Ideas, insights &amp; perspectives</h2></div>
+          <a href="#journal" class="btn btn-light">View all articles</a>
+        </div>
+        <div class="posts">
+          {
+            posts.map(([date, cat, title, desc, a, b]) => (
+              <a href="#journal" class="post reveal">
+                <div class="post-art" style={`--a:${a};--b:${b}`} />
+                <div class="meta mono">
+                  <>
+                    <span>{date}</span>
+                    <span class="pill">{cat}</span>
+                  </>
+                </div>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section faq-wrap" id="faq">
+        <div class="head reveal"><div><p class="eyebrow">FAQ</p><h2>Questions? We are here to help</h2></div></div>
+        <div class="faq">
+          {
+            faqs.map(([q, a], i) => (
+              <details class="reveal" open={i === 0}>
+                <summary>
+                  <span class="mono">{i + 1}</span>
+                  {q}
+                  <i />
+                </summary>
+                <p>{a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta" id="contact">
+        <p class="eyebrow">Idea → Reality</p>
+        <h2>Got a great idea you want to bring to life?</h2>
+        <a href="mailto:hello@optflow.studio" class="btn btn-dark btn-lg">Book a call</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="#top" class="logo"><span class="logo-mark"></span>optflow</a>
+      <nav><a href="#">X (Twitter)</a><a href="#">LinkedIn</a><a href="#">Behance</a><a href="#">Dribbble</a></nav>
+      <small>© 2026 Optflow. All rights reserved.</small>
+    </footer>
+
+    <script>
+      import Lenis from 'lenis'
+      import { initPixelCloud } from '../scripts/pixel-cloud'
+
+      // hero background
+      const heroBg = document.getElementById('hero-bg')
+      if (heroBg) initPixelCloud(heroBg, { skyTopColor: '#5f93e3', skyBottomColor: '#b4cdf4', cloudColor: '#F4F4F1' })
+
+      // smooth scroll
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const lenis = new Lenis({ lerp: 0.09, anchors: { offset: -80 } })
+        const raf = (t: number) => {
+          lenis.raf(t)
+          requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+      }
+
+      // clock
+      const clock = document.getElementById('clock')
+      const tick = () => {
+        if (clock) clock.textContent = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })
+      }
+      tick()
+      setInterval(tick, 15000)
+
+      // copy email
+      const copy = document.getElementById('copy')
+      copy?.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(copy.dataset.email ?? '')
+          const span = copy.querySelector('span')!
+          const old = span.innerHTML
+          span.textContent = 'Copied!'
+          setTimeout(() => (span.innerHTML = old), 1400)
+        } catch {}
+      })
+
+      // reveal + counters
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return
+            e.target.classList.add('in')
+            e.target.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
+              const to = Number(el.dataset.count)
+              if (reduce) return void (el.textContent = String(to))
+              const t0 = performance.now()
+              const step = (t: number) => {
+                const p = Math.min((t - t0) / 1400, 1)
+                el.textContent = String(Math.round(to * (1 - Math.pow(1 - p, 3))))
+                if (p < 1) requestAnimationFrame(step)
+              }
+              requestAnimationFrame(step)
+            })
+            io.unobserve(e.target)
+          }),
+        { threshold: 0.15 },
+      )
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
+    </script>
+  </body>
+</html>
