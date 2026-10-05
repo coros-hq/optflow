@@ -1,0 +1,15 @@
+---
+const nav = [
+  ['Work', '#work'],
+  ['Services', '#services'],
+  ['Pricing', '#pricing'],
+  ['Journal', '#journal'],
+  ['FAQ', '#faq'],
+]
+---
+
+<header class="nav">
+  <a href="#top" class="logo"><span class="logo-mark"></span>optflow</a>
+  <nav>{nav.map(([l, h]) => <a href={h}>{l}</a>)}</nav>
+  <a href="#contact" class="btn btn-dark">Book a call</a>
+</header>

@@ -1,0 +1,28 @@
+---
+const faqs = [
+  ['What services does Optflow provide?', 'Brand identity and strategy, UI/UX and product design, website design and development, social content and growth marketing.'],
+  ['How long does a typical project take?', 'Most brand and website projects take 4–8 weeks from kickoff to launch, depending on scope and how quickly feedback moves.'],
+  ['Do you work with startups or established companies?', 'Both. We scale the engagement to fit — from a focused launch package to an ongoing partnership.'],
+  ['What is your design and development process?', 'Discovery, strategy, then design and build, with weekly check-ins and shared prototypes throughout.'],
+  ['Can you redesign an existing brand or website?', 'Yes. We audit what is working, keep what earns its place and rebuild the rest.'],
+  ['Do you provide support after launch?', 'Yes. Every project includes a support window, and the Scale plan covers ongoing iteration.'],
+]
+---
+
+<section class="section faq-wrap" id="faq">
+  <div class="head reveal"><div><p class="eyebrow">FAQ</p><h2>Questions? We are here to help</h2></div></div>
+  <div class="faq">
+    {
+      faqs.map(([q, a], i) => (
+        <details class="reveal" open={i === 0}>
+          <summary>
+            <span class="mono">{i + 1}</span>
+            {q}
+            <i />
+          </summary>
+          <p>{a}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>

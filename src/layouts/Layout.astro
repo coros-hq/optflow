@@ -1,0 +1,83 @@
+---
+import '../styles/global.css'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Optflow — Creative Design Studio</title>
+    <meta name="description" content="Optflow is an independent creative design studio crafting brands, websites and digital experiences." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <slot />
+
+    <script>
+      import Lenis from 'lenis'
+      import { initPixelCloud } from '../scripts/pixel-cloud'
+
+      // hero background
+      const heroBg = document.getElementById('hero-bg')
+      if (heroBg) initPixelCloud(heroBg, { skyTopColor: '#5f93e3', skyBottomColor: '#b4cdf4', cloudColor: '#F4F4F1' })
+
+      // smooth scroll
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const lenis = new Lenis({ lerp: 0.09, anchors: { offset: -80 } })
+        const raf = (t: number) => {
+          lenis.raf(t)
+          requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+      }
+
+      // clock
+      const clock = document.getElementById('clock')
+      const tick = () => {
+        if (clock) clock.textContent = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })
+      }
+      tick()
+      setInterval(tick, 15000)
+
+      // copy email
+      const copy = document.getElementById('copy')
+      copy?.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(copy.dataset.email ?? '')
+          const span = copy.querySelector('span')!
+          const old = span.innerHTML
+          span.textContent = 'Copied!'
+          setTimeout(() => (span.innerHTML = old), 1400)
+        } catch {}
+      })
+
+      // reveal + counters
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+      const io = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return
+            e.target.classList.add('in')
+            e.target.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
+              const to = Number(el.dataset.count)
+              if (reduce) return void (el.textContent = String(to))
+              const t0 = performance.now()
+              const step = (t: number) => {
+                const p = Math.min((t - t0) / 1400, 1)
+                el.textContent = String(Math.round(to * (1 - Math.pow(1 - p, 3))))
+                if (p < 1) requestAnimationFrame(step)
+              }
+              requestAnimationFrame(step)
+            })
+            io.unobserve(e.target)
+          }),
+        { threshold: 0.15 },
+      )
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
+    </script>
+  </body>
+</html>

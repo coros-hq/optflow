@@ -1,0 +1,12 @@
+---
+const clients = ['Northwind', 'Lumina', 'Halcyon', 'Parallel', 'Kestrel', 'Monolith', 'Vantage']
+---
+
+<section class="clients">
+  <p class="eyebrow">Trusted by world-leading teams</p>
+  <div class="marquee">
+    <div class="track">
+      {[0, 1].map(() => clients.map((c) => <span class="client">{c}</span>))}
+    </div>
+  </div>
+</section>

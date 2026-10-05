@@ -1,89 +1,240 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
 
 const nav = [
-  ['Work', '#work'],
-  ['Services', '#services'],
-  ['Pricing', '#pricing'],
-  ['Journal', '#journal'],
-  ['FAQ', '#faq'],
-]
+  ["Work", "#work"],
+  ["Services", "#services"],
+  ["Pricing", "#pricing"],
+  ["Journal", "#journal"],
+  ["FAQ", "#faq"],
+];
 
-const clients = ['Northwind', 'Lumina', 'Halcyon', 'Parallel', 'Kestrel', 'Monolith', 'Vantage']
+const clients = [
+  "Vanguard Realty",
+  "Atelier Haven",
+  "Aura Interiors",
+  "Prestige Estates",
+  "Urban Living",
+  "Lumina Design",
+  "Apex Architecture",
+];
 
 const projects = [
-  { name: 'Rivermark', desc: 'Bold street branding campaign built to capture attention and energize urban audiences.', tags: ['Website', 'Social Media'], a: '#ffa274', b: '#E8480C', c: '#4d1602' },
-  { name: 'Fluxa', desc: 'Dynamic digital visuals and identity for modern, expressive brands.', tags: ['UX/UI', 'Growth'], a: '#9dc0ff', b: '#2F6FD6', c: '#0e2350' },
-  { name: 'Season', desc: 'Ecommerce experience designed for clarity, speed and engaging product storytelling.', tags: ['Website', 'UX/UI'], a: '#ffd2b5', b: '#E8480C', c: '#2F6FD6' },
-  { name: 'Nova', desc: 'Clean product interface that simplifies complex digital interactions.', tags: ['UX/UI', 'Website', 'Growth'], a: '#ffb08a', b: '#2F6FD6', c: '#13275a' },
-]
+  {
+    name: "Vanguard Estates",
+    desc: "High-converting web platform and local SEO architecture for a luxury boutique real estate group.",
+    tags: ["Real Estate", "Custom Web Build", "Local SEO & Schema"],
+    a: "#7de3c3",
+    b: "#0fb880",
+    c: "#043826",
+  },
+  {
+    name: "Atelier Haven",
+    desc: "Immersive visual portfolio, interactive project showcases, and image search optimization for an interior design firm.",
+    tags: ["Interior Design", "UX/UI", "Image SEO"],
+    a: "#ffd2b5",
+    b: "#E8480C",
+    c: "#4d1602",
+  },
+  {
+    name: "Aura Living Space",
+    desc: "Digital brand refresh and high-performance lead generation portal for high-end interior architecture.",
+    tags: ["Interior Design", "Web Development", "Conversion Strategy"],
+    a: "#c0a0f0",
+    b: "#7038d8",
+    c: "#230f4e",
+  },
+  {
+    name: "Prestige Commercial",
+    desc: "Property discovery engine with interactive maps, fast mobile filters, and structured schema markup.",
+    tags: ["Real Estate", "Technical SEO", "Web App"],
+    a: "#9dc0ff",
+    b: "#2F6FD6",
+    c: "#0e2350",
+  },
+  {
+    name: "Solstice Studio",
+    desc: "Sleek, minimalist design portfolio built to showcase high-res architectural renders at lightning speeds.",
+    tags: ["Architectural Design", "Performance", "Core Web Vitals"],
+    a: "#ffb08a",
+    b: "#2F6FD6",
+    c: "#13275a",
+  },
+  {
+    name: "Urban Habitat",
+    desc: "Comprehensive SEO audit and web rebuild for a regional real estate group, driving organic inquiries.",
+    tags: ["Real Estate", "SEO Optimization", "Growth"],
+    a: "#ffa274",
+    b: "#E8480C",
+    c: "#2F6FD6",
+  },
+];
 
 const services = [
-  { n: '01', title: 'Brand Identity & Strategy', desc: 'Strategic positioning and visual systems that bring your brand to life.', tags: ['Positioning', 'Visual Identity', 'Design System'] },
-  { n: '02', title: 'Digital Marketing & Growth', desc: 'Modern campaigns built to thrive and convert across digital platforms.', tags: ['Conversion Optimization', 'Analytics', 'A/B Testing'] },
-  { n: '03', title: 'Social Media & Content', desc: 'Content and campaigns that grow audiences and strengthen brand presence.', tags: ['Content Strategy', 'Creative Production', 'Campaigns'] },
-  { n: '04', title: 'UI/UX & Product Design', desc: 'Intuitive interfaces and journeys that improve usability and engagement.', tags: ['User Research', 'Interface Design', 'Product Scaling'] },
-  { n: '05', title: 'Website Design & Development', desc: 'Fast, scalable websites designed for performance and clarity.', tags: ['UI Development', 'Performance', 'SEO Setup'] },
-]
+  {
+    n: "01",
+    title: "Brand Strategy & Visual Identity",
+    desc: "Positioning systems and premium visual identities engineered to build instant credibility in competitive markets.",
+    tags: ["Brand Identity", "Visual Systems", "Design Guidelines"],
+  },
+  {
+    n: "02",
+    title: "High-Converting Web Design & UI/UX",
+    desc: "Custom, fast-loading web interfaces built specifically around user journeys, property showcases, and visual portfolios.",
+    tags: ["UI/UX Design", "Custom Wireframing", "Lead Flow Design"],
+  },
+  {
+    n: "03",
+    title: "Web Development & Performance",
+    desc: "Clean, modern code and headless web platforms optimized for fast load speeds, security, and effortless CMS editing.",
+    tags: ["Next.js / Astro", "Custom CMS", "Core Web Vitals"],
+  },
+  {
+    n: "04",
+    title: "Technical & Local SEO Strategy",
+    desc: "Strategic search optimization to ensure your brand ranks for high-intent keywords, local queries, and visual searches.",
+    tags: ["Local Keyword Strategy", "Real Estate Schema", "Technical Audits"],
+  },
+  {
+    n: "05",
+    title: "Conversion Optimization (CRO)",
+    desc: "Continuous refinement of lead capture forms, calls to action, and page speed to maximize organic visitor inquiries.",
+    tags: ["Funnel Optimization", "Analytics Setup", "A/B Testing"],
+  },
+];
 
 const steps = [
-  ['Discovery', 'We start with your business, audience and goals, uncovering the insights that shape a strong digital foundation.'],
-  ['Strategy', 'We define positioning, direction and structure so every design decision serves your long-term growth.'],
-  ['Design', 'We craft branding, interfaces and visual systems that turn complex ideas into clear, engaging experiences.'],
-]
+  [
+    "Audit & Strategy",
+    "We evaluate your current web presence, brand goals, and local search opportunities to map out a clear roadmap.",
+  ],
+  [
+    "Design & Build",
+    "We craft bespoke interfaces, optimize high-res image galleries, and develop a blazing-fast, custom website.",
+  ],
+  [
+    "SEO & Launch",
+    "We implement technical schema markup, optimize local search signals, and launch a platform ready to convert leads.",
+  ],
+];
 
 const plans = [
   {
-    name: 'Launch',
-    blurb: 'For startups and new businesses establishing their brand and digital presence from scratch.',
-    items: ['Brand identity basics', 'Website design & development', 'UI/UX interface design', 'SEO foundation setup', 'Social media starter kit'],
-    price: '$6,000',
-    unit: '/ project',
+    name: "Launch Platform",
+    blurb:
+      "For growing boutique firms needing a fast, professional website with core SEO optimization.",
+    items: [
+      "Custom website design & build (up to 7 pages)",
+      "Mobile-responsive & high-res image optimization",
+      "Core SEO foundation & Google Business setup",
+      "Lead generation & inquiry form integration",
+      "Fast page load & Core Web Vitals tuning",
+    ],
+    price: "$4,500",
+    unit: "/ project",
     featured: false,
   },
   {
-    name: 'Growth',
-    blurb: 'For growing brands ready to scale their digital experience with advanced strategy and design.',
-    items: ['Digital-first branding system', 'Strategic website experience', 'Advanced UI/UX optimization', 'Brand strategy development', 'Social media design system'],
-    price: '$12,000',
-    unit: '/ project',
+    name: "Growth & Search Engine",
+    blurb:
+      "For established real estate & interior design brands ready to dominate local search and capture high-ticket leads.",
+    items: [
+      "Full custom design system & interactive portfolio",
+      "Advanced technical SEO & property/project schema",
+      "Interactive listing/gallery features",
+      "Local SEO strategy & content hub structure",
+      "Conversion rate optimization (CRO) setup",
+    ],
+    price: "$8,500",
+    unit: "/ project",
     featured: true,
   },
   {
-    name: 'Scale',
-    blurb: 'For ambitious companies that need an ongoing creative partner across brand, product and marketing.',
-    items: ['Brand strategy & identity', 'Custom website development', 'End-to-end product UI/UX', 'Digital marketing campaigns', 'Ongoing creative partnership'],
-    price: '$5,000',
-    unit: '/ month',
+    name: "SEO & Experience Retainer",
+    blurb:
+      "Ongoing partnership to maintain search rankings, create high-ranking content, and continuously optimize conversions.",
+    items: [
+      "Monthly local & technical SEO management",
+      "New project/listing optimization & image SEO",
+      "Continuous page speed & UX performance tuning",
+      "Monthly search visibility & lead reporting",
+      "Dedicated design & development updates",
+    ],
+    price: "$2,200",
+    unit: "/ month",
     featured: false,
   },
-]
+];
 
 const quotes = [
-  ['“Optflow turned our brand and website into a real growth engine.”', 'Daniel Carter', 'Founder & CEO, NovaTech'],
-  ['“Their strategy and UI design lifted our entire product experience.”', 'Ethan Walker', 'Product Director, Lumina Labs'],
-  ['“They helped us clarify our brand and launch with confidence.”', 'Marcus Rivera', 'Head of Marketing, Horizon'],
-]
+  [
+    "“Optflow rebuilt our real estate platform and optimized our local SEO. Our organic inquiries doubled in 90 days.”",
+    "Elena Rostova",
+    "Managing Partner, Vanguard Estates",
+  ],
+  [
+    "“Their design showcase for our interior portfolio made our work look incredible while staying super fast on mobile.”",
+    "Julian Vance",
+    "Lead Designer, Atelier Haven Studio",
+  ],
+  [
+    "“The combination of clean custom code and structured SEO made all the difference for our local search rankings.”",
+    "Marcus Vance",
+    "Founder, Apex Architectural Group",
+  ],
+];
 
 const stats = [
-  [120, '+', 'Projects delivered'],
-  [40, '+', 'Industries impacted'],
-  [9, '+', 'Years of experience'],
-]
+  [100, "%", "Custom, clean code"],
+  [3, "x", "Average SEO traffic growth"],
+  [95, "+", "Google PageSpeed score target"],
+];
 
 const posts = [
-  ['June 17, 2026', 'Design', 'Why great UI/UX starts with strategy', 'How strategic thinking shapes intuitive product experiences and meaningful user journeys.', '#2F6FD6', '#E8480C'],
-  ['June 2, 2026', 'Branding', 'Designing brands for the digital-first era', 'How modern identity systems adapt to digital platforms and evolving user behavior.', '#E8480C', '#2F6FD6'],
-]
+  [
+    "September 20, 2026",
+    "Real Estate SEO",
+    "How to Rank Real Estate Websites in Competitive Local Markets",
+    "Why structured schema, neighborhood guides, and site speed matter more than standard SEO keywords.",
+    "#2F6FD6",
+    "#E8480C",
+  ],
+  [
+    "August 14, 2026",
+    "Web Performance",
+    "Optimizing High-Res Interior Photography Without Losing Quality",
+    "Techniques for serving NextGen image formats to keep interior design portfolios loading in under 1 second.",
+    "#E8480C",
+    "#2F6FD6",
+  ],
+];
 
 const faqs = [
-  ['What services does Optflow provide?', 'Brand identity and strategy, UI/UX and product design, website design and development, social content and growth marketing.'],
-  ['How long does a typical project take?', 'Most brand and website projects take 4–8 weeks from kickoff to launch, depending on scope and how quickly feedback moves.'],
-  ['Do you work with startups or established companies?', 'Both. We scale the engagement to fit — from a focused launch package to an ongoing partnership.'],
-  ['What is your design and development process?', 'Discovery, strategy, then design and build, with weekly check-ins and shared prototypes throughout.'],
-  ['Can you redesign an existing brand or website?', 'Yes. We audit what is working, keep what earns its place and rebuild the rest.'],
-  ['Do you provide support after launch?', 'Yes. Every project includes a support window, and the Scale plan covers ongoing iteration.'],
-]
+  [
+    "What industries do you specialize in?",
+    "We specialize in high-ticket visual industries—primarily real estate teams, interior design studios, and architectural firms where brand presentation and local search visibility directly drive client inquiries.",
+  ],
+  [
+    "Why combine Web Design, Build, and SEO into one agency offer?",
+    "A beautiful design won't bring clients if no one finds it on Google, and high search traffic won't convert if the UX is poor or slow. Integrating design, clean development, and technical SEO from day one ensures high search visibility and maximum conversions.",
+  ],
+  [
+    "How long does it take to design, build, and launch a website?",
+    "Most custom niche web platforms and SEO setups take between 3 to 6 weeks from strategy to final launch.",
+  ],
+  [
+    "Do you build on custom frameworks or CMS platforms?",
+    "We build using modern, lightweight frameworks (like Astro or Next.js) coupled with intuitive headless CMS options, ensuring lightning-fast load times, solid security, and easy content management for your team.",
+  ],
+  [
+    "How does the SEO retainer work post-launch?",
+    "Our monthly SEO retainers focus on maintaining technical site health, optimizing new portfolio entries or listings, building local search authority, and analyzing conversion metrics to ensure consistent lead flow.",
+  ],
+  [
+    "Can you audit and redesign our existing site?",
+    "Yes. We start by auditing your current search rankings and UX bottlenecks so we can preserve your established SEO authority while upgrading your visual design and conversions.",
+  ],
+];
 ---
 
 <!doctype html>
@@ -92,37 +243,66 @@ const faqs = [
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Optflow — Creative Design Studio</title>
-    <meta name="description" content="Optflow is an independent creative design studio crafting brands, websites and digital experiences." />
+    <title>Optflow — Web Design, Custom Development & SEO Agency</title>
+    <meta
+      name="description"
+      content="Optflow builds high-converting, SEO-optimized websites and digital experiences for real estate, interior design, and premium brands."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header class="nav">
-      <a href="#top" class="logo"><span class="logo-mark"></span>optflow</a>
-      <nav>{nav.map(([l, h]) => <a href={h}>{l}</a>)}</nav>
-      <a href="#contact" class="btn btn-dark">Book a call</a>
+      <a href="#top" class="logo">
+        <span class="logo-mark"></span>optflow
+      </a>
+      <nav>
+        {nav.map(([l, h]) => (
+          <a href={h}>{l}</a>
+        ))}
+      </nav>
+      <a href="#contact" class="btn btn-dark">
+        Book a strategy call
+      </a>
     </header>
 
     <main id="top">
       <!-- HERO -->
       <section class="hero">
         <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
-        <h1 class="hero-title">We make<br /><span class="hl">Creative Things.</span></h1>
+        <h1 class="hero-title">
+          We design, build &amp; optimize
+          <br />
+          <span class="hl">High-Converting Search Engines.</span>
+        </h1>
         <div class="hero-foot">
-          <span class="mono">GMT+0 <b id="clock">00:00</b></span>
-          <p>Designing brands, products and campaigns built for a digital-first world.</p>
-          <button class="mono copy" id="copy" data-email="hello@optflow.studio"><span>hello@<b>optflow.studio</b></span></button>
+          <p>
+            Crafting bespoke brand identities, fast custom websites, and
+            targeted local SEO strategies for real estate, interior design, and
+            high-ticket service businesses.
+          </p>
+          <button class="mono copy" id="copy" data-email="hello@optflow.studio">
+            <span>
+              hello@<b>optflow.studio</b>
+            </span>
+          </button>
         </div>
       </section>
 
       <!-- CLIENTS -->
       <section class="clients">
-        <p class="eyebrow">Trusted by world-leading teams</p>
+        <p class="eyebrow">
+          Trusted by ambitious real estate &amp; design brands
+        </p>
         <div class="marquee">
           <div class="track">
-            {[0, 1].map(() => clients.map((c) => <span class="client">{c}</span>))}
+            {[0, 1].map(() =>
+              clients.map((c) => <span class="client">{c}</span>),
+            )}
           </div>
         </div>
       </section>
@@ -131,250 +311,326 @@ const faqs = [
       <section class="section" id="work">
         <div class="head reveal">
           <div>
-            <p class="eyebrow">Featured work</p>
-            <h2>Selected projects with ambitious brands and bold teams</h2>
+            <p class="eyebrow">Selected concept studies &amp; work</p>
+            <h2>High-performance web platforms designed for organic growth</h2>
           </div>
-          <a href="#contact" class="btn btn-light">Book an intro call</a>
+          <a href="#contact" class="btn btn-light">
+            Book a discovery call
+          </a>
         </div>
         <div class="work-grid">
-          {
-            projects.map((p, i) => (
-              <article class="card reveal" style={`--a:${p.a};--b:${p.b};--c:${p.c}`}>
-                <div class="art">
-                  <>
-                    <span class="art-shape s1" />
-                    <span class="art-shape s2" />
-                    <span class="art-num mono">0{i + 1}</span>
-                  </>
-                </div>
-                <div class="card-body">
-                  <h3>{p.name}</h3>
-                  <p>{p.desc}</p>
-                  <ul class="tags">
-                    {p.tags.map((t) => (
-                      <li>{t}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))
-          }
+          {projects.map((p, i) => (
+            <article
+              class="card reveal"
+              style={`--a:${p.a};--b:${p.b};--c:${p.c}`}
+            >
+              <div class="art">
+                <>
+                  <span class="art-shape s1" />
+                  <span class="art-shape s2" />
+                  <span class="art-num mono">0{i + 1}</span>
+                </>
+              </div>
+              <div class="card-body">
+                <h3>{p.name}</h3>
+                <p>{p.desc}</p>
+                <ul class="tags">
+                  {p.tags.map((t) => (
+                    <li>{t}</li>
+                  ))}
+                </ul>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
       <!-- SERVICES -->
       <section class="section" id="services">
-        <div class="head reveal"><div><p class="eyebrow">Services</p><h2>Everything a brand needs, under one roof</h2></div></div>
+        <div class="head reveal">
+          <div>
+            <p class="eyebrow">End-to-End Capabilities</p>
+            <h2>
+              Everything your digital presence needs to convert &amp; rank
+            </h2>
+          </div>
+        </div>
         <ul class="services">
-          {
-            services.map((s) => (
-              <li class="service reveal">
-                <span class="mono num">{s.n}</span>
-                <h3>{s.title}</h3>
-                <div class="svc-detail">
-                  <p>{s.desc}</p>
-                  <ul class="tags">
-                    {s.tags.map((t) => (
-                      <li>{t}</li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-            ))
-          }
+          {services.map((s) => (
+            <li class="service reveal">
+              <span class="mono num">{s.n}</span>
+              <h3>{s.title}</h3>
+              <div class="svc-detail">
+                <p>{s.desc}</p>
+                <ul class="tags">
+                  {s.tags.map((t) => (
+                    <li>{t}</li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
         </ul>
       </section>
 
       <!-- PROCESS -->
       <section class="section">
-        <div class="head reveal"><div><p class="eyebrow">How we work</p><h2>From complexity to <em>clarity</em> in 3 steps</h2></div></div>
+        <div class="head reveal">
+          <div>
+            <p class="eyebrow">Our methodology</p>
+            <h2>
+              From concept to <em>search dominance</em> in 3 steps
+            </h2>
+          </div>
+        </div>
         <div class="steps">
-          {
-            steps.map(([t, d], i) => (
-              <div class="step reveal">
-                <>
-                  <span class="mono">0{i + 1}</span>
-                  <h3>{t}</h3>
-                  <p>{d}</p>
-                </>
-              </div>
-            ))
-          }
+          {steps.map(([t, d], i) => (
+            <div class="step reveal">
+              <>
+                <span class="mono">0{i + 1}</span>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </>
+            </div>
+          ))}
         </div>
       </section>
 
       <!-- PRICING -->
-      <!-- <section class="section" id="pricing">
-        <div class="head reveal"><div><p class="eyebrow">Pricing</p><h2>Choose a plan that fits your needs</h2></div></div>
-        <div class="plans">
+      <section class="section" id="pricing">
+        <div class="head reveal">
+          <div>
+            <p class="eyebrow">Transparent Investment</p>
+            <h2>Tailored packages designed for clear business ROI</h2>
+          </div>
+        </div>
+        <div class="work-grid">
           {plans.map((p) => (
-            <div class:list={['plan', 'reveal', { featured: p.featured }]}>
-              <h3>{p.name} plan</h3>
-              <p class="blurb">{p.blurb}</p>
-              <ul class="checks">{p.items.map((it) => <li>{it}</li>)}</ul>
-              <div class="price"><b>{p.price}</b><span>{p.unit}</span></div>
-              <a href="#contact" class:list={['btn', p.featured ? 'btn-light' : 'btn-dark']}>Inquire about {p.name}</a>
+            <div
+              class={`card reveal ${p.featured ? "featured" : ""}`}
+              style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; background: rgba(255,255,255,0.02);"
+            >
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
+                  <h3 style="font-size: 1.5rem; font-weight: 500;">{p.name}</h3>
+                  <div class="mono" style="font-size: 1.25rem;">
+                    <b>{p.price}</b>{" "}
+                    <small style="opacity: 0.6; font-size: 0.8rem;">
+                      {p.unit}
+                    </small>
+                  </div>
+                </div>
+                <p style="opacity: 0.8; margin-bottom: 1.5rem; line-height: 1.5;">
+                  {p.blurb}
+                </p>
+                <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                  {p.items.map((item) => (
+                    <li style="padding: 0.4rem 0; opacity: 0.85; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
+                      <span style="color: #0fb880;">✓</span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <a
+                href="#contact"
+                class={`btn ${p.featured ? "btn-light" : "btn-dark"}`}
+                style="text-align: center; width: 100%;"
+              >
+                Select {p.name}
+              </a>
             </div>
           ))}
         </div>
-      </section> -->
+      </section>
 
       <!-- TESTIMONIALS + STATS -->
       <section class="section">
-        <div class="head reveal"><div><p class="eyebrow">Client voices</p><h2>Where ambitious brands build their digital future</h2></div></div>
+        <div class="head reveal">
+          <div>
+            <p class="eyebrow">Client results</p>
+            <h2>
+              Transforming local visibility into consistent organic pipelines
+            </h2>
+          </div>
+        </div>
         <div class="quotes">
-          {
-            quotes.map(([q, n, r]) => (
-              <figure class="quote reveal">
-                <>
-                  <blockquote>{q}</blockquote>
-                  <figcaption>
-                    <>
-                      <b>{n}</b>
-                      <span>{r}</span>
-                    </>
-                  </figcaption>
-                </>
-              </figure>
-            ))
-          }
+          {quotes.map(([q, n, r]) => (
+            <figure class="quote reveal">
+              <>
+                <blockquote>{q}</blockquote>
+                <figcaption>
+                  <>
+                    <b>{n}</b>
+                    <span>{r}</span>
+                  </>
+                </figcaption>
+              </>
+            </figure>
+          ))}
         </div>
         <div class="stats">
-          {
-            stats.map(([n, s, l]) => (
-              <div class="stat reveal">
-                <>
-                  <b>
-                    <span data-count={n}>0</span>
-                    {s}
-                  </b>
-                  <span>{l}</span>
-                </>
-              </div>
-            ))
-          }
+          {stats.map(([n, s, l]) => (
+            <div class="stat reveal">
+              <>
+                <b>
+                  <span data-count={n}>0</span>
+                  {s}
+                </b>
+                <span>{l}</span>
+              </>
+            </div>
+          ))}
         </div>
       </section>
 
       <!-- JOURNAL -->
       <section class="section" id="journal">
         <div class="head reveal">
-          <div><p class="eyebrow">Insights</p><h2>Ideas, insights &amp; perspectives</h2></div>
-          <a href="#journal" class="btn btn-light">View all articles</a>
+          <div>
+            <p class="eyebrow">Insights &amp; Strategy</p>
+            <h2>Articles on web design, performance &amp; organic search</h2>
+          </div>
+          <a href="#journal" class="btn btn-light">
+            View all articles
+          </a>
         </div>
         <div class="posts">
-          {
-            posts.map(([date, cat, title, desc, a, b]) => (
-              <a href="#journal" class="post reveal">
-                <div class="post-art" style={`--a:${a};--b:${b}`} />
-                <div class="meta mono">
-                  <>
-                    <span>{date}</span>
-                    <span class="pill">{cat}</span>
-                  </>
-                </div>
-                <h3>{title}</h3>
-                <p>{desc}</p>
-              </a>
-            ))
-          }
+          {posts.map(([date, cat, title, desc, a, b]) => (
+            <a href="#journal" class="post reveal">
+              <div class="post-art" style={`--a:${a};--b:${b}`} />
+              <div class="meta mono">
+                <>
+                  <span>{date}</span>
+                  <span class="pill">{cat}</span>
+                </>
+              </div>
+              <h3>{title}</h3>
+              <p>{desc}</p>
+            </a>
+          ))}
         </div>
       </section>
 
       <!-- FAQ -->
       <section class="section faq-wrap" id="faq">
-        <div class="head reveal"><div><p class="eyebrow">FAQ</p><h2>Questions? We are here to help</h2></div></div>
+        <div class="head reveal">
+          <div>
+            <p class="eyebrow">Frequently Asked Questions</p>
+            <h2>Everything you need to know about our process</h2>
+          </div>
+        </div>
         <div class="faq">
-          {
-            faqs.map(([q, a], i) => (
-              <details class="reveal" open={i === 0}>
-                <summary>
-                  <span class="mono">{i + 1}</span>
-                  {q}
-                  <i />
-                </summary>
-                <p>{a}</p>
-              </details>
-            ))
-          }
+          {faqs.map(([q, a], i) => (
+            <details class="reveal" open={i === 0}>
+              <summary>
+                <span class="mono">{i + 1}</span>
+                {q}
+                <i />
+              </summary>
+              <p>{a}</p>
+            </details>
+          ))}
         </div>
       </section>
 
       <!-- CTA -->
       <section class="cta" id="contact">
-        <p class="eyebrow">Idea → Reality</p>
-        <h2>Got a great idea you want to bring to life?</h2>
-        <a href="mailto:hello@optflow.studio" class="btn btn-dark btn-lg">Book a call</a>
+        <p class="eyebrow">Ready to grow your search visibility?</p>
+        <h2>Let's build a website that drives real business results.</h2>
+        <a href="mailto:hello@optflow.studio" class="btn btn-dark btn-lg">
+          Book a strategy call
+        </a>
       </section>
     </main>
 
     <footer class="footer">
-      <a href="#top" class="logo"><span class="logo-mark"></span>optflow</a>
-      <nav><a href="#">X (Twitter)</a><a href="#">LinkedIn</a><a href="#">Behance</a><a href="#">Dribbble</a></nav>
-      <small>© 2026 Optflow. All rights reserved.</small>
+      <a href="#top" class="logo">
+        <span class="logo-mark"></span>optflow
+      </a>
+      <nav>
+        <a href="#">X (Twitter)</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Behance</a>
+        <a href="#">Dribbble</a>
+      </nav>
+      <small>© 2026 Optflow Studio. All rights reserved.</small>
     </footer>
 
     <script>
-      import Lenis from 'lenis'
-      import { initPixelCloud } from '../scripts/pixel-cloud'
+      import Lenis from "lenis";
+      import { initPixelCloud } from "../scripts/pixel-cloud";
 
       // hero background
-      const heroBg = document.getElementById('hero-bg')
-      if (heroBg) initPixelCloud(heroBg, { skyTopColor: '#5f93e3', skyBottomColor: '#b4cdf4', cloudColor: '#F4F4F1' })
+      const heroBg = document.getElementById("hero-bg");
+      if (heroBg)
+        initPixelCloud(heroBg, {
+          skyTopColor: "#5f93e3",
+          skyBottomColor: "#b4cdf4",
+          cloudColor: "#F4F4F1",
+        });
 
       // smooth scroll
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        const lenis = new Lenis({ lerp: 0.09, anchors: { offset: -80 } })
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const lenis = new Lenis({ lerp: 0.09, anchors: { offset: -80 } });
         const raf = (t: number) => {
-          lenis.raf(t)
-          requestAnimationFrame(raf)
-        }
-        requestAnimationFrame(raf)
+          lenis.raf(t);
+          requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
       }
 
       // clock
-      const clock = document.getElementById('clock')
+      const clock = document.getElementById("clock");
       const tick = () => {
-        if (clock) clock.textContent = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })
-      }
-      tick()
-      setInterval(tick, 15000)
+        if (clock)
+          clock.textContent = new Date().toLocaleTimeString("en-GB", {
+            hour: "2-digit",
+            minute: "2-digit",
+            timeZone: "UTC",
+          });
+      };
+      tick();
+      setInterval(tick, 15000);
 
       // copy email
-      const copy = document.getElementById('copy')
-      copy?.addEventListener('click', async () => {
+      const copy = document.getElementById("copy");
+      copy?.addEventListener("click", async () => {
         try {
-          await navigator.clipboard.writeText(copy.dataset.email ?? '')
-          const span = copy.querySelector('span')!
-          const old = span.innerHTML
-          span.textContent = 'Copied!'
-          setTimeout(() => (span.innerHTML = old), 1400)
+          await navigator.clipboard.writeText(copy.dataset.email ?? "");
+          const span = copy.querySelector("span")!;
+          const old = span.innerHTML;
+          span.textContent = "Copied!";
+          setTimeout(() => (span.innerHTML = old), 1400);
         } catch {}
-      })
+      });
 
       // reveal + counters
-      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches
+      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
       const io = new IntersectionObserver(
         (entries) =>
           entries.forEach((e) => {
-            if (!e.isIntersecting) return
-            e.target.classList.add('in')
-            e.target.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
-              const to = Number(el.dataset.count)
-              if (reduce) return void (el.textContent = String(to))
-              const t0 = performance.now()
-              const step = (t: number) => {
-                const p = Math.min((t - t0) / 1400, 1)
-                el.textContent = String(Math.round(to * (1 - Math.pow(1 - p, 3))))
-                if (p < 1) requestAnimationFrame(step)
-              }
-              requestAnimationFrame(step)
-            })
-            io.unobserve(e.target)
+            if (!e.isIntersecting) return;
+            e.target.classList.add("in");
+            e.target
+              .querySelectorAll<HTMLElement>("[data-count]")
+              .forEach((el) => {
+                const to = Number(el.dataset.count);
+                if (reduce) return void (el.textContent = String(to));
+                const t0 = performance.now();
+                const step = (t: number) => {
+                  const p = Math.min((t - t0) / 1400, 1);
+                  el.textContent = String(
+                    Math.round(to * (1 - Math.pow(1 - p, 3))),
+                  );
+                  if (p < 1) requestAnimationFrame(step);
+                };
+                requestAnimationFrame(step);
+              });
+            io.unobserve(e.target);
           }),
         { threshold: 0.15 },
-      )
-      document.querySelectorAll('.reveal').forEach((el) => io.observe(el))
+      );
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
     </script>
   </body>
 </html>

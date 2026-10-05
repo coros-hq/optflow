@@ -1,0 +1,43 @@
+---
+const plans = [
+  {
+    name: 'Launch',
+    blurb: 'For startups and new businesses establishing their brand and digital presence from scratch.',
+    items: ['Brand identity basics', 'Website design & development', 'UI/UX interface design', 'SEO foundation setup', 'Social media starter kit'],
+    price: '$6,000',
+    unit: '/ project',
+    featured: false,
+  },
+  {
+    name: 'Growth',
+    blurb: 'For growing brands ready to scale their digital experience with advanced strategy and design.',
+    items: ['Digital-first branding system', 'Strategic website experience', 'Advanced UI/UX optimization', 'Brand strategy development', 'Social media design system'],
+    price: '$12,000',
+    unit: '/ project',
+    featured: true,
+  },
+  {
+    name: 'Scale',
+    blurb: 'For ambitious companies that need an ongoing creative partner across brand, product and marketing.',
+    items: ['Brand strategy & identity', 'Custom website development', 'End-to-end product UI/UX', 'Digital marketing campaigns', 'Ongoing creative partnership'],
+    price: '$5,000',
+    unit: '/ month',
+    featured: false,
+  },
+]
+---
+
+<section class="section" id="pricing">
+  <div class="head reveal"><div><p class="eyebrow">Pricing</p><h2>Choose a plan that fits your needs</h2></div></div>
+  <div class="plans">
+    {plans.map((p) => (
+      <div class:list={['plan', 'reveal', { featured: p.featured }]}>
+        <h3>{p.name} plan</h3>
+        <p class="blurb">{p.blurb}</p>
+        <ul class="checks">{p.items.map((it) => <li>{it}</li>)}</ul>
+        <div class="price"><b>{p.price}</b><span>{p.unit}</span></div>
+        <a href="#contact" class:list={['btn', p.featured ? 'btn-light' : 'btn-dark']}>Inquire about {p.name}</a>
+      </div>
+    ))}
+  </div>
+</section>

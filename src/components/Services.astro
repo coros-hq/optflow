@@ -1,0 +1,31 @@
+---
+const services = [
+  { n: '01', title: 'Brand Identity & Strategy', desc: 'Strategic positioning and visual systems that bring your brand to life.', tags: ['Positioning', 'Visual Identity', 'Design System'] },
+  { n: '02', title: 'Digital Marketing & Growth', desc: 'Modern campaigns built to thrive and convert across digital platforms.', tags: ['Conversion Optimization', 'Analytics', 'A/B Testing'] },
+  { n: '03', title: 'Social Media & Content', desc: 'Content and campaigns that grow audiences and strengthen brand presence.', tags: ['Content Strategy', 'Creative Production', 'Campaigns'] },
+  { n: '04', title: 'UI/UX & Product Design', desc: 'Intuitive interfaces and journeys that improve usability and engagement.', tags: ['User Research', 'Interface Design', 'Product Scaling'] },
+  { n: '05', title: 'Website Design & Development', desc: 'Fast, scalable websites designed for performance and clarity.', tags: ['UI Development', 'Performance', 'SEO Setup'] },
+]
+---
+
+<section class="section" id="services">
+  <div class="head reveal"><div><p class="eyebrow">Services</p><h2>Everything a brand needs, under one roof</h2></div></div>
+  <ul class="services">
+    {
+      services.map((s) => (
+        <li class="service reveal">
+          <span class="mono num">{s.n}</span>
+          <h3>{s.title}</h3>
+          <div class="svc-detail">
+            <p>{s.desc}</p>
+            <ul class="tags">
+              {s.tags.map((t) => (
+                <li>{t}</li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
