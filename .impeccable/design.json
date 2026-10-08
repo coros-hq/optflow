@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T00:00:00Z",
+  "title": "Design System: Optflow",
+  "extensions": {
+    "colorMeta": {
+      "signal-orange": { "role": "primary", "displayName": "Signal Orange", "canonical": "#e8480c", "tonalRamp": ["#3d1204", "#6b1f07", "#992d09", "#c73a0b", "#e8480c", "#f07a4a", "#f7ab89", "#fcdccd"] },
+      "signal-orange-bright": { "role": "primary", "displayName": "Signal Orange Bright", "canonical": "#ff5a1f", "tonalRamp": ["#421604", "#732609", "#a5380f", "#d84818", "#ff5a1f", "#ff865a", "#ffb394", "#ffe0d3"] },
+      "flow-blue": { "role": "secondary", "displayName": "Flow Blue", "canonical": "#2f6fd6", "tonalRamp": ["#0c1d38", "#143262", "#1d4a95", "#2559bb", "#2f6fd6", "#5f93e3", "#97b9ee", "#d3e2f8"] },
+      "warm-paper": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#f4f4f1", "tonalRamp": ["#2a2a28", "#454542", "#7d7d78", "#a5a5a0", "#c9c9c4", "#e1e1dc", "#ebebe7", "#f4f4f1"] },
+      "card-paper": { "role": "neutral", "displayName": "Card Paper", "canonical": "#fbfbf9", "tonalRamp": ["#2a2a28", "#454542", "#7d7d78", "#a5a5a0", "#d0d0cb", "#e8e8e4", "#f4f4f1", "#fbfbf9"] },
+      "graphite-ink": { "role": "neutral", "displayName": "Graphite Ink", "canonical": "#454542", "tonalRamp": ["#141413", "#232321", "#323230", "#454542", "#62625e", "#7d7d78", "#a5a5a0", "#d0d0cb"] },
+      "quiet-stone": { "role": "neutral", "displayName": "Quiet Stone", "canonical": "#7d7d78", "tonalRamp": ["#262625", "#3c3c3a", "#555552", "#6a6a66", "#7d7d78", "#9a9a95", "#bcbcb7", "#dededa"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles." },
+      "title": { "displayName": "Title", "purpose": "Card, post and plan headings." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs and secondary copy." },
+      "label": { "displayName": "Label", "purpose": "Mono eyebrows, numerals, clock." }
+    },
+    "shadows": [
+      { "name": "card-lift", "value": "0 30px 60px -30px rgba(69, 69, 66, 0.35)", "purpose": "Card hover only." },
+      { "name": "signal-glow", "value": "0 8px 20px -8px rgba(232, 72, 12, 0.6)", "purpose": "Resting glow under the orange primary button." }
+    ],
+    "motion": [
+      { "name": "reveal-ease", "value": "cubic-bezier(0.2, 0.7, 0.2, 1)", "purpose": "Scroll reveals and art shape transforms (0.8s)." },
+      { "name": "lift", "value": "transform 0.25s", "purpose": "Button hover lift of 2px." },
+      { "name": "card-lift-time", "value": "0.4s", "purpose": "Card hover lift of 6px." }
+    ],
+    "breakpoints": [
+      { "name": "collapse", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Orange pill for the main action.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Book a call</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;padding:12px 22px;border-radius:999px;font:500 15px Outfit,system-ui,sans-serif;background:#e8480c;color:#fff;text-decoration:none;box-shadow:0 8px 20px -8px rgba(232,72,12,.6);transition:transform .25s}.ds-btn-primary:hover{transform:translateY(-2px)}.ds-btn-primary:focus-visible{outline:2px solid #2f6fd6;outline-offset:3px}"
+    },
+    {
+      "name": "Light Button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Quiet secondary pill; turns blue on hover.",
+      "html": "<a class=\"ds-btn-light\" href=\"#\">See pricing</a>",
+      "css": ".ds-btn-light{display:inline-flex;align-items:center;padding:12px 22px;border-radius:999px;font:500 15px Outfit,system-ui,sans-serif;background:#fbfbf9;color:#454542;border:1px solid rgba(69,69,66,.14);text-decoration:none;transition:transform .25s}.ds-btn-light:hover{transform:translateY(-2px);border-color:#2f6fd6;color:#2f6fd6}.ds-btn-light:focus-visible{outline:2px solid #2f6fd6;outline-offset:3px}"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Small pill label for services and categories.",
+      "html": "<span class=\"ds-tag\">Branding</span>",
+      "css": ".ds-tag{display:inline-block;font:400 13px Outfit,system-ui,sans-serif;padding:5px 12px;border-radius:999px;border:1px solid rgba(69,69,66,.14);background:rgba(251,251,249,.7);color:#454542}"
+    },
+    {
+      "name": "Work Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Soft 28px card with an art tile and body copy; lifts on hover.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-art\"></div><div class=\"ds-card-body\"><h3>Project name</h3><p>Short description of the project.</p></div></article>",
+      "css": ".ds-card{background:#fbfbf9;border-radius:28px;padding:12px;border:1px solid rgba(69,69,66,.14);transition:transform .4s,box-shadow .4s;max-width:320px;font-family:Outfit,system-ui,sans-serif;color:#454542}.ds-card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(69,69,66,.35)}.ds-art{aspect-ratio:4/3;border-radius:20px;background:radial-gradient(120% 90% at 20% 10%,#b4cdf4,#5f93e3)}.ds-card-body{padding:22px 14px 14px;display:grid;gap:10px}.ds-card-body h3{margin:0;font-weight:500;font-size:32px;line-height:1.05;letter-spacing:-.035em}.ds-card-body p{margin:0;color:#7d7d78}"
+    },
+    {
+      "name": "Floating Nav",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Frosted pill nav with logo, links and a primary button.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-logo\"><i class=\"ds-mark\"></i>optflow</span><nav><a href=\"#\">Work</a><a href=\"#\">Services</a><a href=\"#\">Pricing</a></nav><a class=\"ds-nav-cta\" href=\"#\">Book a call</a></header>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:10px 12px 10px 20px;border-radius:999px;background:rgba(244,244,241,.8);backdrop-filter:blur(14px);border:1px solid rgba(69,69,66,.14);font-family:Outfit,system-ui,sans-serif;color:#454542}.ds-logo{display:inline-flex;align-items:center;gap:10px;font:500 26px Outfit,system-ui,sans-serif;letter-spacing:-.04em}.ds-mark{width:22px;height:22px;border-radius:6px;background:conic-gradient(from 200deg,#e8480c,#2f6fd6,#e8480c);transform:rotate(12deg)}.ds-nav nav{display:flex;gap:32px;font-size:15px}.ds-nav nav a{color:inherit;text-decoration:none;opacity:.75;transition:opacity .2s}.ds-nav nav a:hover{opacity:1}.ds-nav-cta{padding:12px 22px;border-radius:999px;background:#e8480c;color:#fff;text-decoration:none;font-weight:500;font-size:15px}"
+    },
+    {
+      "name": "Featured Plan",
+      "kind": "card",
+      "refersTo": "plan-featured",
+      "description": "Pricing card inverted to Flow Blue.",
+      "html": "<div class=\"ds-plan\"><h3>Growth</h3><p>Placeholder blurb for the plan.</p><div class=\"ds-price\"><b>$0</b><span>/ project</span></div><a class=\"ds-plan-btn\" href=\"#\">Get started</a></div>",
+      "css": ".ds-plan{display:flex;flex-direction:column;gap:20px;padding:32px;border-radius:28px;background:#2f6fd6;color:#fff;max-width:320px;font-family:Outfit,system-ui,sans-serif}.ds-plan h3{margin:0;font-weight:500;font-size:32px;letter-spacing:-.035em;line-height:1.05}.ds-plan p{margin:0;color:rgba(255,255,255,.78)}.ds-price b{font:500 48px Outfit,system-ui,sans-serif;letter-spacing:-.04em}.ds-price span{margin-left:6px;color:rgba(255,255,255,.78)}.ds-plan-btn{display:inline-flex;justify-content:center;padding:12px 22px;border-radius:999px;background:#fbfbf9;color:#2f6fd6;text-decoration:none;font-weight:500}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Daylight Studio",
+    "overview": "Optflow reads as a sunlit room: warm paper surfaces, graphite type, a pixel-cloud sky in the hero, and a single confident orange signal that says \"act here.\" Blue is its cool counterpart, used for hover, the featured plan and ambient glow. Everything is soft and rounded (pills, 28px cards) so the studio feels friendly and approachable to a business owner, while small uppercase mono labels keep a layer of engineering precision underneath.",
+    "keyCharacteristics": [
+      "Warm off-white paper, never pure white or black.",
+      "One orange accent for actions and emphasis; blue as the secondary voice.",
+      "Pill buttons, tags and nav; large-radius cards.",
+      "Tight negative-tracked Outfit headlines paired with Geist Mono micro-labels.",
+      "Flat at rest, lift on hover; hairline borders over shadows."
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Orange marks the action or the emphasis, nothing else. If two orange things compete in a viewport, one of them should not be orange.", "section": "colors" },
+      { "name": "The Warm Neutral Rule", "body": "No pure white page or pure black text. Neutrals lean warm (paper and graphite); white appears only as text on orange or blue fills.", "section": "colors" },
+      { "name": "The Tight Headline Rule", "body": "Headlines always carry negative letter-spacing (-0.035em to -0.045em) and a line-height near 1.05; loosening them breaks the voice.", "section": "typography" },
+      { "name": "The Mono Whisper Rule", "body": "Mono is for 12px uppercase labels only. It never carries sentences.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Nothing carries a shadow at rest except the orange primary button's glow. Shadows are a hover response.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep orange (#e8480c) to actions and a single emphasis per view.",
+      "Do use pill radii (999px) for anything clickable or label-like and 24-28px for containers.",
+      "Do separate surfaces with a tone step and the 14% hairline, and reserve shadows for hover.",
+      "Do set headlines in Outfit 500 with negative tracking and use Geist Mono only for 12px uppercase labels.",
+      "Do honor `prefers-reduced-motion`; reveals, marquee and lifts must switch off."
+    ],
+    "donts": [
+      "Don't use pure white backgrounds or pure black text.",
+      "Don't introduce a third accent hue beyond orange and blue.",
+      "Don't add resting drop shadows to cards or tags.",
+      "Don't set sentences or body copy in the mono face.",
+      "Don't swap the pill buttons for square or lightly rounded ones."
+    ]
+  }
+}
